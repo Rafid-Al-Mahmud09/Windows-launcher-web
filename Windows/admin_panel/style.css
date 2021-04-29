@@ -1,0 +1,47 @@
+	header{
+		background-color:#04AA6D;
+		padding:5px;
+		color:#fff;
+	}
+	header h1{text-align:center;}
+	.findElement{
+		padding:20px;
+		height:20px;
+		position:relative;
+	}
+	.findElement h2{
+		text-align:center;
+	}
+	.findElement input{
+		position:absolute;
+		padding:20px;
+		height:20px;
+		width:70%;
+		font-size:20px;
+		left:2%;
+	}
+	.findElement a{
+		position:absolute;
+		left:85%;
+		padding:20px;
+		width:5%;
+		height:20px;
+		background-color:#04AA6D;
+		color:#fff;
+		text-decoration:none;
+		text-align:center;
+	}
+	.findElement a:hover{
+		background-color:#fff;
+		color:#04AA6D;
+		border:1px solid #000;
+	}
+
+@media only screen and (min-width: 900px) {
+	.findElement input{width:75%;}
+}
+
+@media only screen and (max-width: 400px) {
+	.findElement input{width:50%;}
+	.findElement a{width:5%;left:75%;}
+}

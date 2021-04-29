@@ -1,0 +1,82 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Element Info Viewer</title>
+		<style>
+			.collapsible {
+			  background-color: #777;
+			  color: white;
+			  cursor: pointer;
+			  padding: 18px;
+			  width: 100%;
+			  border: none;
+			  text-align: left;
+			  outline: none;
+			  font-size: 15px;
+			}
+			.active, .collapsible:hover {
+			  background-color: #555;
+			}
+			.collapsible:after {
+			  content: '\002B';
+			  color: white;
+			  font-weight: bold;
+			  float: right;
+			  margin-left: 5px;
+			}
+			.active:after {
+			  content: "\2212";
+			}
+			.content {
+			  padding: 0 18px;
+			  max-height: 0;
+			  overflow: hidden;
+			  transition: max-height 0.2s ease-out;
+			  background-color: #f1f1f1;
+			}
+			.code{
+				background-color:#eee;
+				padding:10px;
+				word-wrap: break-word;
+				display: block;
+				font-family: monospace;
+				margin: 1em 0;
+			}
+			#Element-Info-Viewer div{
+				background-color:#fafafa;
+				padding:10px;
+			}
+			#Element-Info-Viewer div:hover{
+				box-shadow:10px 10px 10px gray;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="Element-Info-Viewer">
+			<div>
+				html<button>↓</button>
+			</div>
+			<p class="code">&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</p>
+			<button class="collapsible">Click me to uncollapse</button>
+			<div class="content"><p>hi</p></div>
+		</div>
+		
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight){
+				  content.style.maxHeight = null;
+				} else {
+				  content.style.maxHeight = content.scrollHeight + "px";
+				} 
+			  });
+			}
+		</script>
+	</body>
+</html>
